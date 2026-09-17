@@ -80,6 +80,8 @@ python3 scripts/vtrap.py diff 有水印.jpg 无水印.jpg
 
 ## 姊妹仓库
 
+
+- [liya-chat-game-referee](https://github.com/feverZHONG/liya-chat-game-referee) · [liya-spy-game](https://github.com/feverZHONG/liya-spy-game) · [liya-sea-turtle-soup](https://github.com/feverZHONG/liya-sea-turtle-soup) —— 聊天里能玩的三件（回合制裁判引擎 / 谁是卧底 / 海龟汤）
 - [liya-subtraction-skill](https://github.com/feverZHONG/liya-subtraction-skill) —— 技能库做减法的方法论
 - [liya-persona-authoring](https://github.com/feverZHONG/liya-persona-authoring) —— 人格／身份文件的写法与减法
 - [liya-sillytavern-cards](https://github.com/feverZHONG/liya-sillytavern-cards) —— 酒馆（SillyTavern）角色卡：写法、格式规格、三个 Python 工具
