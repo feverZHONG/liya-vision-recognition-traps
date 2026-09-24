@@ -85,6 +85,7 @@ python3 scripts/vtrap.py diff 有水印.jpg 无水印.jpg
 - [liya-subtraction-skill](https://github.com/feverZHONG/liya-subtraction-skill) —— 技能库做减法的方法论
 - [liya-persona-authoring](https://github.com/feverZHONG/liya-persona-authoring) —— 人格／身份文件的写法与减法
 - [liya-sillytavern-cards](https://github.com/feverZHONG/liya-sillytavern-cards) —— 酒馆（SillyTavern）角色卡：写法、格式规格、三个 Python 工具
+- [liya-sillytavern-worldbook](https://github.com/feverZHONG/liya-sillytavern-worldbook) —— 酒馆世界书（Lorebook）：触发链源码实证 + 触发体检 / 模拟 / 生成工具
 
 ## 许可
 
