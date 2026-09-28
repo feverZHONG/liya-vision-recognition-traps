@@ -9,7 +9,7 @@ description: 用视觉模型识图前先读——问法诱导/文字自动纠错
 > 用 mmx vision / ds-vision / vision_analyze 识图时的通用坑。2026-08-06 表情包批量建档 10+ 张实战总结（大量被阁下纠正后沉淀）。
 > **陷阱编号 1-19 是稳定锚点**——别的 skill 按编号引用（陷阱 1/3/5/6 最常被引），改表别改号。
 >
-> **读者须知（路径与工具）**：下文 `/opt/data` 是作者环境的仓库根，读者按自己路径替换；`mmx` / `ds-vision` / `vprompt` 是作者环境的视觉入口——**陷阱与判据部分与工具无关**，换任何视觉模型都成立，把自己的调用替换进去即可。`internet-memes-reference` / `（私档）-archive` 是作者的私人资料库 skill，读者可忽略。
+> **读者须知（路径与工具）**：下文 `/opt/data` 是作者环境的仓库根，读者按自己路径替换；`mmx` / `ds-vision` / `vprompt` 是作者环境的视觉入口——**陷阱与判据部分与工具无关**，换任何视觉模型都成立，把自己的调用替换进去即可。文中提到的若干**私人资料库**（梗知识、作品档案一类）不在本仓，读者可忽略。
 
 ## 第一步：选入口
 
@@ -92,7 +92,6 @@ QQ 收图与 md5 验原图、批量提示词体系、ds-vision 的选项坑 → 
 | DeepSeek Vision API 价格／参数／用法 | `references/deepseek-vision-api.md`（官方文档实录，含 bin/ds-vision 用法） |
 | 客观描述问法模板（先答「这是什么」＋中性复核纪律） | `templates/objective-describe.md` |
 | 视觉提示词库 v4/desc/struct/meme | `vision-prompts` skill（`bin/vprompt list|show`，唯一权威源；ds-vision `--prompt-name` 同源） |
-| 表情包建档完整流程与案例（表情包识别陷阱节） | `internet-memes-reference` skill |
-| 双生视界角色档案（点名核验） | `（私档）-archive` skill |
+| 表情包建档完整流程与案例（表情包识别陷阱节） | **私档，不在本仓** |
 | 统一入口（OCR ／ 差分） | `vtrap ocr <图>` ／ `vtrap diff A.jpg B.jpg`（= `scripts/vtrap.py`） |
 | 孪生图判同（一张目标 vs 多候选，像素误差定案） | `python3 scripts/twin-compare.py <目标> <候选1> <候选2> … --regions x0,y0,x1,y1;…`（输出各区域最小 MAE 与排名；同一张 ≈20 以内、同族另一张 ≈40+） |
