@@ -72,7 +72,7 @@
 ```bash
 bin/ds-vision <图片路径|URL> [问题...]   # 默认 detail=auto（≈original）
 bin/ds-vision --low <图> 问题            # 512×512 更快更省
-bin/ds-vision --v4 ["角色名"] <图>       # （私档）-archive 立绘提示词 build_prompt_v4（打底身份可选）
+bin/ds-vision --v4 ["角色名"] <图>       # 角色库立绘提示词 build_prompt_v4（打底身份可选；角色库属私档，不在本仓）
 bin/ds-vision --meme ["背景"] <图>       # 表情包提示词 build_prompt_meme
 bin/ds-vision --thinking <图>            # 开思考模式（默认关闭！）
 bin/ds-vision --batch <目录|文件...> [--out JSON目录]   # 批量精简摘要，断点续跑
@@ -82,7 +82,7 @@ bin/ds-vision --list-models              # 列模型
 - **思考模式默认关闭（2026-08-21 阁下拍板，省 token 铁律）**：视觉识别是感知任务不靠思维链。实测同一张图——关思考：输出 869 token / reasoning 0；开思考：输出 2655 / reasoning 1712，**单张省 70% 且更快**。批量识图时 reasoning 就是烧钱（几十张=十万级 token），默认关，需要深度推理才 `--thinking`
 - key 从 `$DEEPSEEK_API_KEY` 环境变量或 `/opt/data/.env` 读取
 - 非 JPEG（gif/webp/png）自动转 JPEG；超 32MiB 自动压缩
-- 提示词复用 mmx 体系：`（私档）-archive/scripts/vision_prompt.py`（build_prompt_v4 / build_prompt_meme），官方视觉也吃同一套打底+要求两层结构
+- 提示词复用 mmx 体系：角色库自带的 `vision_prompt.py`（build_prompt_v4 / build_prompt_meme；角色库属私档，不在本仓），官方视觉也吃同一套打底+要求两层结构
 - **max_tokens 陷阱（2026-08-21 实测）**：普通问题 4096 够；v4/meme 结构化提示词回答长，4096 会被 reasoning 吃爆（v4 实测输出 4096=截断，reasoning 占 3761）→ 脚本内 v4/meme 模式自动升 12000
 - 输出到 stdout，token 用量打印到 stderr
 
