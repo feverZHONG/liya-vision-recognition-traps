@@ -7,7 +7,7 @@
 ## 模型与端点
 
 - 模型名：`deepseek-flash`（**V4.1 Flash，原生多模态**）。2026-09-10 起为唯一接受图片的模型（其他模型返回 400 "This model does not support image"）
-- 旧名 `deepseek-v4-flash-vision-exp` 已随旧模型下线，仍可调用但请求由 V4.1 Flash 承接，按 Flash 单价计费 → **本天使工具链已全面切到 `deepseek-flash`**
+- 旧名 `deepseek-v4-flash-vision-exp` 已随旧模型下线，仍可调用但请求由 V4.1 Flash 承接，按 Flash 单价计费 → **工具链已全面切到 `deepseek-flash`**
 - V4 Pro 的视觉从来就不支持；`deepseek-v4-pro` 本身也将于 **2026-09-14 12:00（北京）下线**，此前请求全部路由到 V4.1 Flash
 - Base URL（OpenAI 兼容）：`https://api.deepseek.com`
 - Base URL（Anthropic 兼容）：`https://api.deepseek.com/anthropic`
@@ -79,7 +79,7 @@ bin/ds-vision --batch <目录|文件...> [--out JSON目录]   # 批量精简摘�
 bin/ds-vision --list-models              # 列模型
 ```
 
-- **思考模式默认关闭（2026-08-21 阁下拍板，省 token 铁律）**：视觉识别是感知任务不靠思维链。实测同一张图——关思考：输出 869 token / reasoning 0；开思考：输出 2655 / reasoning 1712，**单张省 70% 且更快**。批量识图时 reasoning 就是烧钱（几十张=十万级 token），默认关，需要深度推理才 `--thinking`
+- **思考模式默认关闭（2026-08-21 定案，省 token 铁律）**：视觉识别是感知任务不靠思维链。实测同一张图——关思考：输出 869 token / reasoning 0；开思考：输出 2655 / reasoning 1712，**单张省 70% 且更快**。批量识图时 reasoning 就是烧钱（几十张=十万级 token），默认关，需要深度推理才 `--thinking`
 - key 从 `$DEEPSEEK_API_KEY` 环境变量或 `/opt/data/.env` 读取
 - 非 JPEG（gif/webp/png）自动转 JPEG；超 32MiB 自动压缩
 - 提示词复用 mmx 体系：角色库自带的 `vision_prompt.py`（build_prompt_v4 / build_prompt_meme；角色库属私档，不在本仓），官方视觉也吃同一套打底+要求两层结构
