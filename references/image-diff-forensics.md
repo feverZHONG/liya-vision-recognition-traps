@@ -63,7 +63,7 @@ dblur = np.asarray(Image.fromarray(np.clip(d, 0, 255).astype('uint8'))
 
 ## 六、答「差距在哪」：画面层之外还有文件层
 
-差分定位完那行字只算一半。阁下要「看看差距」，就得把两份存档逐段拆开对齐（小米水印三层结构 → `video-analysis/references/motion-photo.md` §八）：
+差分定位完那行字只算一半。阁下要「看看差距」，就得把两份存档逐段拆开对齐（手机相册水印三层结构 → `video-analysis/references/motion-photo.md` §八）：
 
 | 层 | 水印版 | 无水印版 |
 |---|---|---|

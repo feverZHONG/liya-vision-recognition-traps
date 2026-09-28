@@ -92,7 +92,7 @@ tier: T2  # 识图属 T2；归档落盘按对应 skill 纪律
 
 ## 陷阱 9：推理模型视觉识别——reasoning token 吃掉可见输出（2026-08-14 mimo-v2.5 实测）
 
-- **现象**：mimo-v2.5（小米 MiMo）是推理模型，completion_tokens 中 reasoning 占 30-80%。max_tokens 设 500 时，reasoning 消耗 499 tokens，可见输出为 0（空字符串）
+- **现象**：mimo-v2.5（MiMo）是推理模型，completion_tokens 中 reasoning 占 30-80%。max_tokens 设 500 时，reasoning 消耗 499 tokens，可见输出为 0（空字符串）
 - **根因**：推理模型内部 chain-of-thought 和可见输出共享 max_tokens 额度
 - **对策**：
   - **视觉任务 max_tokens ≥ 4000**（v4 提示词 + 图片），纯文本短答 ≥ 2000
